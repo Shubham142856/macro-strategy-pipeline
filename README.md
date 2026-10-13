@@ -35,9 +35,11 @@ Sub-commands: `ingest | build | train | report` (add `--mode demo|live`, `--refr
 | Exa (optional) | `POST https://api.exa.ai/search` (`category: news`) | second news source, exact publish dates |
 | yfinance | hourly bars: ES=F, NQ=F, ZN=F, GC=F, EURUSD=X, CL=F | strategy P&L labels |
 
-Every Apify run (actor id, run id, dataset id, window, input) is written to `data/raw/manifest.json`, and raw payloads are
-cached under `data/raw/` — so a reviewer can re-run `python -m macro live` **without a token** from the cached files.
-Swap or add actors in `config.yaml → apify.actors` (fallbacks are tried in order).
+## Security & Reproducibility
+* **Environment Variables:** In accordance with quantitative engineering and security best practices, API keys are never hardcoded or checked into source control. All pipeline secrets are loaded dynamically via `.env` (template in `.env.example`).
+* **Zero-Token Reproduction:** Every Apify run (actor ID, run ID, dataset ID, date window, input schema) is tracked in `data/raw/manifest.json`, and all raw scraped payloads are cached under `data/raw/apify/`. Evaluators can clone the repo and execute `python -m macro live` immediately **without providing any API tokens** or consuming scraper credits.
+* **Fresh Live Scraping:** If evaluators wish to run live scraping across a new date range, copy `.env.example` to `.env`, insert your own `APIFY_TOKEN` and `TAVILY_API_KEY`, and run `python -m macro live --refresh`.
+* Swap or add actors in `config.yaml → apify.actors` (fallbacks are tried in order).
 
 ## Design
 * **Decision unit = release slot.** CPI m/m + Core CPI + CPI y/y at the same timestamp are *one* trade decision (no triple counting).

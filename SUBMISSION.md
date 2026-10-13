@@ -25,12 +25,12 @@ Please find my completed assessment submission for the Quantitative Data Scienti
 1. **Repository:**
    - URL: `https://github.com/Shubham142856/macro-strategy-pipeline`
 
-2. **Scraping Credentials & Actor Provenance:**
-   - **Apify Actor:** `xtracto/forexfactory-calendar`
-   - **Apify Token:** `<APIFY_TOKEN>` *(included in email; User ID: `JqFPVCFW97wkrZBKh`)*
-   - **Tavily API Key:** `<TAVILY_API_KEY>` *(included in email)*
-   - **Tavily Remote MCP:** `https://mcp.tavily.com/mcp/?tavilyApiKey=<TAVILY_API_KEY>`
-   - **Reproducibility Without API Keys:** All 10 live Apify runs (covering the 180-day trading window + 365-day surprise warmup, 830 events) are cached under `data/raw/apify/` and tracked in `data/raw/manifest.json`. Anyone cloning the repo can re-run the pipeline immediately without spending Apify credits or configuring tokens.
+2. **Authentication & Scraping Provenance:**
+   - **Security Best Practice:** In adherence to quantitative engineering and security best practices, personal API keys and tokens are not shared or hardcoded. The pipeline authenticates strictly via environment variables in a local `.env` file (see `.env.example`).
+   - **Apify Actor:** `xtracto/forexfactory-calendar` (Apify Store)
+   - **Tavily Search API:** Used for real-time macroeconomic news ingestion.
+   - **Zero-Token Reproduction (Immediate Testing):** All 10 live Apify runs (covering the 180-day trading window + 365-day surprise warmup, 830 real USD events) and news items are already cached under `data/raw/apify/` and fully cataloged in `data/raw/manifest.json`. You can clone and reproduce the entire pipeline end-to-end immediately without needing any API keys or consuming credits.
+   - **Live Scraping with Custom Keys:** To trigger a fresh live scrape against the external APIs, you can provide your own `APIFY_TOKEN` and `TAVILY_API_KEY` in `.env` as documented in `README.md`.
 
 3. **Evaluation Summary & Deliverables:**
    - **Full Evaluation Report:** [`reports/evaluation_report.md`](reports/evaluation_report.md)
