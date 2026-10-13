@@ -1,0 +1,11 @@
+.env
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+data/macro.db
+data/macro_demo.db
+data/raw/prices/
+.venv/
+.DS_Store
+Thumbs.db

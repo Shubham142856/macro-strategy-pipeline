@@ -1,0 +1,222 @@
+[
+  {
+    "actor_id": "xtracto/forexfactory-calendar",
+    "run_id": "UaUkgc1OdoQWbMJgi",
+    "dataset_id": "owrf4emcuTVMyXphA",
+    "from": "2025-04-16",
+    "to": "2025-06-14",
+    "n_items": 96,
+    "input": {
+      "dateRange": "range",
+      "rangeFrom": "2025-04-16",
+      "rangeTo": "2025-06-14",
+      "currencies": [
+        "USD"
+      ],
+      "minImpact": "medium",
+      "maxItems": 0,
+      "proxyConfiguration": {
+        "useApifyProxy": true
+      }
+    },
+    "fetched_at": "2026-10-13T19:43:25.708445+00:00"
+  },
+  {
+    "actor_id": "xtracto/forexfactory-calendar",
+    "run_id": "q0MH2er7GVaZdAuKA",
+    "dataset_id": "Bo3aCkyTIzjKi15lk",
+    "from": "2025-06-15",
+    "to": "2025-08-13",
+    "n_items": 93,
+    "input": {
+      "dateRange": "range",
+      "rangeFrom": "2025-06-15",
+      "rangeTo": "2025-08-13",
+      "currencies": [
+        "USD"
+      ],
+      "minImpact": "medium",
+      "maxItems": 0,
+      "proxyConfiguration": {
+        "useApifyProxy": true
+      }
+    },
+    "fetched_at": "2026-10-13T19:43:46.391994+00:00"
+  },
+  {
+    "actor_id": "xtracto/forexfactory-calendar",
+    "run_id": "v4rtnTvuQK2PAWWDn",
+    "dataset_id": "p8dADstYnf6p0f9P1",
+    "from": "2025-08-14",
+    "to": "2025-10-12",
+    "n_items": 92,
+    "input": {
+      "dateRange": "range",
+      "rangeFrom": "2025-08-14",
+      "rangeTo": "2025-10-12",
+      "currencies": [
+        "USD"
+      ],
+      "minImpact": "medium",
+      "maxItems": 0,
+      "proxyConfiguration": {
+        "useApifyProxy": true
+      }
+    },
+    "fetched_at": "2026-10-13T19:44:04.038927+00:00"
+  },
+  {
+    "actor_id": "xtracto/forexfactory-calendar",
+    "run_id": "o0eSeaVhLatujo2oQ",
+    "dataset_id": "P8JYbh6lod2L1f7vo",
+    "from": "2025-10-13",
+    "to": "2025-12-11",
+    "n_items": 80,
+    "input": {
+      "dateRange": "range",
+      "rangeFrom": "2025-10-13",
+      "rangeTo": "2025-12-11",
+      "currencies": [
+        "USD"
+      ],
+      "minImpact": "medium",
+      "maxItems": 0,
+      "proxyConfiguration": {
+        "useApifyProxy": true
+      }
+    },
+    "fetched_at": "2026-10-13T19:44:16.286786+00:00"
+  },
+  {
+    "actor_id": "xtracto/forexfactory-calendar",
+    "run_id": "3bpwAOEwdMxdxZKnb",
+    "dataset_id": "reA8Mk5k4rLv93rMd",
+    "from": "2025-12-12",
+    "to": "2026-02-09",
+    "n_items": 94,
+    "input": {
+      "dateRange": "range",
+      "rangeFrom": "2025-12-12",
+      "rangeTo": "2026-02-09",
+      "currencies": [
+        "USD"
+      ],
+      "minImpact": "medium",
+      "maxItems": 0,
+      "proxyConfiguration": {
+        "useApifyProxy": true
+      }
+    },
+    "fetched_at": "2026-10-13T19:44:28.066254+00:00"
+  },
+  {
+    "actor_id": "xtracto/forexfactory-calendar",
+    "run_id": "JPBOqhV6AVqX9NeTY",
+    "dataset_id": "0aa9Xx8Al5IivAUL3",
+    "from": "2026-02-10",
+    "to": "2026-04-10",
+    "n_items": 110,
+    "input": {
+      "dateRange": "range",
+      "rangeFrom": "2026-02-10",
+      "rangeTo": "2026-04-10",
+      "currencies": [
+        "USD"
+      ],
+      "minImpact": "medium",
+      "maxItems": 0,
+      "proxyConfiguration": {
+        "useApifyProxy": true
+      }
+    },
+    "fetched_at": "2026-10-13T19:44:47.837437+00:00"
+  },
+  {
+    "actor_id": "xtracto/forexfactory-calendar",
+    "run_id": "ny3M3evwApaScwcFx",
+    "dataset_id": "Ap8T9hlXMFUNCjbvW",
+    "from": "2026-04-11",
+    "to": "2026-06-09",
+    "n_items": 82,
+    "input": {
+      "dateRange": "range",
+      "rangeFrom": "2026-04-11",
+      "rangeTo": "2026-06-09",
+      "currencies": [
+        "USD"
+      ],
+      "minImpact": "medium",
+      "maxItems": 0,
+      "proxyConfiguration": {
+        "useApifyProxy": true
+      }
+    },
+    "fetched_at": "2026-10-13T19:45:02.260179+00:00"
+  },
+  {
+    "actor_id": "xtracto/forexfactory-calendar",
+    "run_id": "c78WCBL3aISWlWRn2",
+    "dataset_id": "mDFSQebWqLc6Xh6uK",
+    "from": "2026-06-10",
+    "to": "2026-08-08",
+    "n_items": 83,
+    "input": {
+      "dateRange": "range",
+      "rangeFrom": "2026-06-10",
+      "rangeTo": "2026-08-08",
+      "currencies": [
+        "USD"
+      ],
+      "minImpact": "medium",
+      "maxItems": 0,
+      "proxyConfiguration": {
+        "useApifyProxy": true
+      }
+    },
+    "fetched_at": "2026-10-13T19:45:21.830177+00:00"
+  },
+  {
+    "actor_id": "xtracto/forexfactory-calendar",
+    "run_id": "87WZchmQoDznIj5Rh",
+    "dataset_id": "fsnqgPDdnScPsaUkb",
+    "from": "2026-08-09",
+    "to": "2026-10-07",
+    "n_items": 78,
+    "input": {
+      "dateRange": "range",
+      "rangeFrom": "2026-08-09",
+      "rangeTo": "2026-10-07",
+      "currencies": [
+        "USD"
+      ],
+      "minImpact": "medium",
+      "maxItems": 0,
+      "proxyConfiguration": {
+        "useApifyProxy": true
+      }
+    },
+    "fetched_at": "2026-10-13T19:45:35.140427+00:00"
+  },
+  {
+    "actor_id": "xtracto/forexfactory-calendar",
+    "run_id": "34t7TEldwuDeaEIEX",
+    "dataset_id": "285JDgVa1Z7ncf24E",
+    "from": "2026-10-08",
+    "to": "2026-10-27",
+    "n_items": 22,
+    "input": {
+      "dateRange": "range",
+      "rangeFrom": "2026-10-08",
+      "rangeTo": "2026-10-27",
+      "currencies": [
+        "USD"
+      ],
+      "minImpact": "medium",
+      "maxItems": 0,
+      "proxyConfiguration": {
+        "useApifyProxy": true
+      }
+    },
+    "fetched_at": "2026-10-13T19:45:45.858469+00:00"
+  }
+]

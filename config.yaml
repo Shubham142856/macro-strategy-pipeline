@@ -1,0 +1,81 @@
+project:
+  lookback_days: 180          # calendar window required by the assignment
+  warmup_days: 365            # EXTRA calendar history, used only to normalise surprises (never traded)
+  db_path: data/macro.db
+  seed: 42
+  display_tz: America/New_York
+
+apify:
+  # Primary actor (verified on Apify Store: custom date range, USD filter, actual/forecast/previous).
+  # Residential proxy is recommended by the actor author so that `actual` values are populated.
+  timeout_secs: 1800
+  chunk_days: 60
+  actors:
+    - actor_id: xtracto/forexfactory-calendar
+      input:
+        dateRange: range
+        rangeFrom: "{from}"
+        rangeTo: "{to}"
+        currencies: [USD]
+        minImpact: medium
+        maxItems: 0
+        proxyConfiguration:
+          useApifyProxy: true
+    # Optional fallback (add input schema of the actor you choose, same {from}/{to} placeholders):
+    # - actor_id: bovi/forex-economic-calendar-scraper
+    #   input: {...}
+
+tavily:
+  search_depth: basic          # "advanced" costs 2 credits/request
+  max_results: 20
+  window_days: 7               # one request per query per weekly window
+  queries:
+    - "US inflation CPI Federal Reserve rate expectations"
+    - "US labor market jobs report payrolls unemployment"
+    - "US economy GDP growth recession outlook"
+    - "FOMC Powell interest rate decision markets"
+    - "Treasury yields dollar stocks macro week ahead"
+
+exa:                            # optional second news source (used only if EXA_API_KEY is set)
+  enabled: true
+  num_results: 25
+
+markets:
+  bar_interval: 1h
+  assets:                       # symbol: round-trip cost in bps
+    ES=F:     {cost_bps: 1.0}   # S&P 500 futures
+    NQ=F:     {cost_bps: 1.2}   # Nasdaq 100 futures
+    ZN=F:     {cost_bps: 0.6}   # 10y T-note futures
+    GC=F:     {cost_bps: 1.5}   # Gold futures
+    EURUSD=X: {cost_bps: 0.8}   # inverse-USD proxy
+    CL=F:     {cost_bps: 3.0}   # WTI crude futures
+
+strategy:
+  horizons_bars: [1, 4, 24]     # hold for N hourly bars
+  directions: [1, -1]           # long / short
+  entry_latency_minutes: 1      # enter at the first bar OPEN strictly after release (+latency)
+  max_entry_gap_hours: 3        # skip slot if no bar within this gap (holidays / gaps)
+  risk_per_trade_bps: 25        # 1-sigma(horizon) move == 25 bps of capital
+  max_leverage: 4.0
+  vol_lookback_bars: 120
+
+model:
+  primary: gbm                  # pre-specified; NOT chosen on test results
+  ridge_alpha: 30.0
+  gbm:
+    max_depth: 3
+    learning_rate: 0.05
+    max_iter: 150
+    min_samples_leaf: 80
+    l2_regularization: 2.0
+  trade_threshold_bps: 0.0      # trade only if predicted net P&L > threshold
+  min_p_win: 0.5                # used by the gated variant
+  winsor_pct: 1.0
+
+validation:
+  n_folds: 5                    # expanding-window walk-forward folds
+  initial_train_frac: 0.40
+  embargo_hours: 24
+  n_random_draws: 300           # random-selection baseline / permutation test
+  bootstrap_reps: 1000
+  bootstrap_block: 5
